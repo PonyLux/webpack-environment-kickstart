@@ -3,15 +3,13 @@ var helpers = require('./helpers');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
-    entry: {
-        'index': helpers.root('src/index.js')
-    },
+    entry: helpers.root('src/index.js'),
     resolve: {
-        extensions: ['', '.js', '.json'],
+        extensions: ['.js', '.json'],
         modules: [helpers.root('src'), 'node_modules']
     },
     module: {
-        loader: [
+        rules: [
             {
                 test: /\.js/,
                 exclude: [ /node_modules/ ]
